@@ -1,0 +1,29 @@
+{
+  "name": "@sprucejs/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "bin": {
+    "spr": "./dist/bin.js"
+  },
+  "scripts": {
+    "build:watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js"
+  },
+  "author": "Daniel Cornock",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.157",
+    "@types/node": "^14.0.14",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "lodash": "^4.17.15"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
