@@ -1,17 +1,18 @@
 import { Command } from 'commander';
 import path from 'path';
 
-import { createFolder } from '../../utilities/create-folder';
+import { Files } from '../../utilities/files';
 import { Logger } from '../../utilities/logger';
 import { generateStarterFiles } from './generate-starter-files';
 import { initialiseGit } from './initialise-git';
+import { installDependencies } from './install-dependencies';
 
 export const generateApplication = async (command: Command) => {
   const applicationName: string = command.args[0];
 
   Logger.log('\nCreating SpruceJS project, sit tight...');
 
-  createFolder(path.join(applicationName, 'src'));
+  Files.createFolder(path.join(applicationName, 'src'));
 
   Logger.log('\nGenerating starter files...');
   generateStarterFiles(applicationName);
@@ -19,4 +20,7 @@ export const generateApplication = async (command: Command) => {
   Logger.log('\nInitialising Git repo...');
   await initialiseGit(applicationName);
   Logger.success('Git successfully initilised!');
+
+  await installDependencies(applicationName);
+  Logger.success('\nDependencies successfully installed!');
 };

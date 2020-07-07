@@ -3,8 +3,7 @@ import path from 'path';
 import { IGeneratedFile } from '../../templates/interfaces/generated-file.interface';
 import { IGeneratorModule } from '../../templates/interfaces/generator-module.interface';
 import { appmodule, gitignore, main, packagejson, tsconfig } from '../../templates/static-named';
-import { createFile } from '../../utilities/create-file';
-import { currentDir } from '../../utilities/directory-locations';
+import { Files } from '../../utilities/files';
 import { Logger } from '../../utilities/logger';
 
 export const generateStarterFiles = (appName: string) => {
@@ -17,8 +16,12 @@ export const generateStarterFiles = (appName: string) => {
 
 const generateFile = (generator: IGeneratorModule, appName: string) => {
   const data: IGeneratedFile = generator.generate(appName),
-    fileLocation: string = path.join(currentDir(), appName, data.fileName);
+    fileLocation: string = path.join(
+      Files.getCurrentDir(),
+      appName,
+      data.fileName
+    );
 
-  createFile(fileLocation, data.file);
+  Files.createFile(fileLocation, data.file);
   Logger.success(`Created ${data.fileName}`);
 };

@@ -5,7 +5,7 @@ export class Logger {
     console.log(chalk.blue(content));
   }
 
-  static error(content: string): void {
+  static error(content: any): void {
     console.log(chalk.red(content));
   }
 

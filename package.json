@@ -14,12 +14,14 @@
   "author": "Daniel Cornock",
   "license": "ISC",
   "devDependencies": {
+    "@types/cli-spinner": "^0.2.0",
     "@types/lodash": "^4.14.157",
     "@types/node": "^14.0.14",
     "typescript": "^3.9.6"
   },
   "dependencies": {
     "chalk": "^4.1.0",
+    "cli-spinner": "^0.2.10",
     "commander": "^5.1.0",
     "lodash": "^4.17.15",
     "simple-git": "^2.11.0"
