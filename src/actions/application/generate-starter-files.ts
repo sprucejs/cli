@@ -5,6 +5,7 @@ import { IGeneratorModule } from '../../templates/interfaces/generator-module.in
 import { appmodule, gitignore, main, packagejson, tsconfig } from '../../templates/static-named';
 import { createFile } from '../../utilities/create-file';
 import { currentDir } from '../../utilities/directory-locations';
+import { Logger } from '../../utilities/logger';
 
 export const generateStarterFiles = (appName: string) => {
   generateFile(packagejson, appName);
@@ -17,6 +18,8 @@ export const generateStarterFiles = (appName: string) => {
 const generateFile = (generator: IGeneratorModule, appName: string) => {
   const data: IGeneratedFile = generator.generate(appName),
     fileLocation: string = path.join(currentDir(), appName, data.fileName);
+
+  Logger.success(`Created ${data.fileName}`);
 
   createFile(fileLocation, data.file);
 };
