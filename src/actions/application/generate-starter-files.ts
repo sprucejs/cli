@@ -19,7 +19,6 @@ const generateFile = (generator: IGeneratorModule, appName: string) => {
   const data: IGeneratedFile = generator.generate(appName),
     fileLocation: string = path.join(currentDir(), appName, data.fileName);
 
-  Logger.success(`Created ${data.fileName}`);
-
   createFile(fileLocation, data.file);
+  Logger.success(`Created ${data.fileName}`);
 };

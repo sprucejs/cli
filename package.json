@@ -21,7 +21,8 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "simple-git": "^2.11.0"
   },
   "files": [
     "dist/**/*"
