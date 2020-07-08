@@ -1,5 +1,4 @@
 import { Command } from 'commander';
-import { existsSync } from 'fs';
 import { last } from 'lodash';
 import path from 'path';
 
@@ -30,7 +29,7 @@ export function generateFile(command: Command): void {
 }
 
 function notInRoot(): boolean {
-  if (!existsSync('src')) {
+  if (!Files.exists('src')) {
     Logger.error(
       'This command needs to be executed from the root of your project.'
     );

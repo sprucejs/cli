@@ -1,17 +1,16 @@
+import { forEach } from 'lodash';
 import path from 'path';
 
 import { IGeneratedFile } from '../../templates/interfaces/generated-file.interface';
 import { IGeneratorModule } from '../../templates/interfaces/generator-module.interface';
-import { appmodule, gitignore, main, packagejson, tsconfig } from '../../templates/static-named';
+import * as starterFiles from '../../templates/static-named';
 import { Files } from '../../utilities/files';
 import { Logger } from '../../utilities/logger';
 
 export function generateStarterFiles(appName: string): void {
-  generateFile(packagejson, appName);
-  generateFile(tsconfig, appName);
-  generateFile(gitignore, appName);
-  generateFile(main, appName);
-  generateFile(appmodule, appName);
+  forEach(starterFiles, (file: IGeneratorModule) => {
+    generateFile(file, appName);
+  });
 }
 
 function generateFile(generator: IGeneratorModule, appName: string): void {

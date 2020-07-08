@@ -18,5 +18,9 @@ export class Files {
     }
   }
 
+  static exists(name: string): boolean {
+    return fs.existsSync(name);
+  }
+
   static getCurrentDir: () => string = process.cwd;
 }
