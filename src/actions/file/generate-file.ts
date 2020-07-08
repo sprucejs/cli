@@ -7,16 +7,20 @@ import { Files } from '../../utilities/files';
 import { Logger } from '../../utilities/logger';
 import { getGeneratorFn } from './get-generator-fn';
 import { FileType } from './interfaces/file-type.constant';
+import { IGeneratorDetails } from './interfaces/generator-details.interface';
 
 export function generateFile(command: Command): void {
   if (notInRoot()) {
+    Logger.error(
+      'This command needs to be executed from the root of your project.'
+    );
     return;
   }
 
-  const [fileType, fileTarget]: Array<string> = command.args,
-    name: string = last(fileTarget.split('/')) as string,
-    { type, generate } = getGeneratorFn(fileType);
+  const [fileType, fileTarget]: Array<string> = command.args;
+  const { type, generate }: IGeneratorDetails = getGeneratorFn(fileType);
 
+  const name: string = last(fileTarget.split('/')) as string;
   const { fileName, file }: IGeneratedFile = generate(name);
 
   if (type === FileType.MODULE) {
@@ -29,13 +33,5 @@ export function generateFile(command: Command): void {
 }
 
 function notInRoot(): boolean {
-  if (!Files.exists('src')) {
-    Logger.error(
-      'This command needs to be executed from the root of your project.'
-    );
-
-    return true;
-  }
-
-  return false;
+  return !Files.exists('src');
 }

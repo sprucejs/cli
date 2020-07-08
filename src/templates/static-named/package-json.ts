@@ -12,7 +12,8 @@ export function generate(name: string): IGeneratedFile {
       "scripts": {
         "dev": "tsc-watch --onSuccess \\"npm start\\"",
         "start": "node ./dist/main.js",
-        "build": "tsc"
+        "build": "tsc",
+        "lint": "tslint --project tsconfig.json"
       },
       "author": "",
       "license": "ISC",
