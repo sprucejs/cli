@@ -3,8 +3,8 @@ import { Command } from 'commander';
 import { generateApplication } from './actions/application/generate-application';
 import { generateFile } from './actions/file/generate-file';
 
-function run() {
-  const program = new Command();
+function run(): void {
+  const program: Command = new Command() as Command;
 
   program
     .command('new')

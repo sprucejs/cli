@@ -1,4 +1,4 @@
-export const kebabToPascal = (label: string) => {
+export function kebabToPascal(label: string): string {
   const splitWord: Array<string> = label.split('-');
 
   return splitWord.reduce((accum, nextWord) => {
@@ -7,4 +7,4 @@ export const kebabToPascal = (label: string) => {
 
     return accum + pascalCased;
   }, '');
-};
+}

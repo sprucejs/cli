@@ -1,6 +1,6 @@
 import { IGeneratedFile } from '../interfaces/generated-file.interface';
 
-export const generate = (name: string): IGeneratedFile => {
+export function generate(name: string): IGeneratedFile {
   return {
     fileName: 'package.json',
     file: `
@@ -28,4 +28,4 @@ export const generate = (name: string): IGeneratedFile => {
       }
     }`
   };
-};
+}

@@ -2,7 +2,7 @@ import { controller, module, router, service } from '../../templates/dynamic-nam
 import { FileType } from './interfaces/file-type.constant';
 import { IGeneratorDetails } from './interfaces/generator-details.interface';
 
-export const getGeneratorFn = (key: string): IGeneratorDetails => {
+export function getGeneratorFn(key: string): IGeneratorDetails {
   switch (key) {
     case 'routes':
     case 'router':
@@ -32,4 +32,4 @@ export const getGeneratorFn = (key: string): IGeneratorDetails => {
         type: FileType.MODULE
       };
   }
-};
+}

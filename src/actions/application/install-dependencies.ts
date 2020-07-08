@@ -2,8 +2,8 @@ import { Spinner } from 'cli-spinner';
 
 import { execShellCommand } from '../../utilities/exec-shell-command';
 
-export const installDependencies = async (appName: string): Promise<void> => {
-  const spinner = new Spinner('\nInstalling dependencies... %s');
+export async function installDependencies(appName: string): Promise<void> {
+  const spinner: Spinner = new Spinner('\nInstalling dependencies... %s');
   spinner.setSpinnerString('|/-\\');
   spinner.start();
 
@@ -11,4 +11,4 @@ export const installDependencies = async (appName: string): Promise<void> => {
 
   await execShellCommand('npm i');
   spinner.stop();
-};
+}

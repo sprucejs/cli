@@ -7,7 +7,7 @@ export class Files {
   }
 
   static createFolderPathFromSrc(name: string): void {
-    const fullPath = path.join('src', name);
+    const fullPath: string = path.join('src', name);
 
     Files.createFolder(fullPath);
   }
@@ -18,5 +18,5 @@ export class Files {
     }
   }
 
-  static getCurrentDir = process.cwd;
+  static getCurrentDir: () => string = process.cwd;
 }

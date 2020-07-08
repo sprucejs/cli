@@ -9,7 +9,7 @@ import { Logger } from '../../utilities/logger';
 import { getGeneratorFn } from './get-generator-fn';
 import { FileType } from './interfaces/file-type.constant';
 
-export const generateFile = (command: Command) => {
+export function generateFile(command: Command): void {
   if (notInRoot()) {
     return;
   }
@@ -27,9 +27,9 @@ export const generateFile = (command: Command) => {
     Files.createFolderPathFromSrc(path.join(fileTarget, type));
     Files.createFile(path.join('src', fileTarget, type, fileName), file);
   }
-};
+}
 
-const notInRoot = (): boolean => {
+function notInRoot(): boolean {
   if (!existsSync('src')) {
     Logger.error(
       'This command needs to be executed from the root of your project.'
@@ -39,4 +39,4 @@ const notInRoot = (): boolean => {
   }
 
   return false;
-};
+}

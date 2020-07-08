@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 
+// tslint:disable: no-console
 export class Logger {
   static blue(content: string): void {
     console.log(chalk.blue(content));
@@ -17,3 +18,5 @@ export class Logger {
     console.log(content);
   }
 }
+
+// tslint:enable

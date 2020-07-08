@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 
 import { Logger } from './logger';
 
-export const execShellCommand = (command: string): Promise<any> => {
+export function execShellCommand(command: string): Promise<any> {
   return new Promise((resolve, reject) => {
     exec(command, (error, stdout, stderr) => {
       if (error) {
@@ -13,4 +13,4 @@ export const execShellCommand = (command: string): Promise<any> => {
       }
     });
   });
-};
+}

@@ -9,7 +9,8 @@
   "scripts": {
     "build:watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "lint": "tslint --project tsconfig.json"
   },
   "author": "Daniel Cornock",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "@types/cli-spinner": "^0.2.0",
     "@types/lodash": "^4.14.157",
     "@types/node": "^14.0.14",
+    "tslint": "^6.1.2",
     "typescript": "^3.9.6"
   },
   "dependencies": {

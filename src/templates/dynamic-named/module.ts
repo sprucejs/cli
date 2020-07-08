@@ -1,7 +1,7 @@
 import { kebabToPascal } from '../../utilities/kebab-to-pascal';
 import { IGeneratedFile } from '../interfaces/generated-file.interface';
 
-export const generate = (name: string): IGeneratedFile => {
+export function generate(name: string): IGeneratedFile {
   return {
     fileName: `${name}.module.ts`,
     file: `import { injectable } from 'tsyringe';
@@ -15,4 +15,4 @@ export class ${kebabToPascal(name)}Module implements IModule {
   public routes = [];
 }`
   };
-};
+}

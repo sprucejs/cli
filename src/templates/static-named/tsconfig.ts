@@ -1,6 +1,6 @@
 import { IGeneratedFile } from '../interfaces/generated-file.interface';
 
-export const generate = (): IGeneratedFile => {
+export function generate(): IGeneratedFile {
   return {
     fileName: 'tsconfig.json',
     file: `{
@@ -21,11 +21,11 @@ export const generate = (): IGeneratedFile => {
         "noUnusedParameters": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,  
+        "emitDecoratorMetadata": true,
       },
       "include": ["src/**/*"],
       "exclude": ["node_modules", "**/*.spec.ts", "**/*.stub.ts"]
     }
     `
   };
-};
+}

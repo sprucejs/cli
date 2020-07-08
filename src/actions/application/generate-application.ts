@@ -7,7 +7,7 @@ import { generateStarterFiles } from './generate-starter-files';
 import { initialiseGit } from './initialise-git';
 import { installDependencies } from './install-dependencies';
 
-export const generateApplication = async (command: Command) => {
+export async function generateApplication(command: Command): Promise<void> {
   const applicationName: string = command.args[0];
 
   Logger.log('\nCreating SpruceJS project, sit tight...');
@@ -23,4 +23,4 @@ export const generateApplication = async (command: Command) => {
 
   await installDependencies(applicationName);
   Logger.success('\nDependencies successfully installed!');
-};
+}
