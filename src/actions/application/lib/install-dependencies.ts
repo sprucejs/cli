@@ -1,9 +1,11 @@
 import { Spinner } from 'cli-spinner';
 
-import { execShellCommand } from '../../utilities/exec-shell-command';
+import { execShellCommand } from '../../../utilities/exec-shell-command';
+import { Logger } from '../../../utilities/logger';
 
 export async function installDependencies(appName: string): Promise<void> {
-  const spinner: Spinner = new Spinner('\nInstalling dependencies... %s');
+  Logger.log('\n');
+  const spinner: Spinner = new Spinner('Installing dependencies... %s');
   spinner.setSpinnerString('|/-\\');
   spinner.start();
 

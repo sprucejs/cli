@@ -22,5 +22,13 @@ export class Files {
     return fs.existsSync(name);
   }
 
+  static readFile(name: string): string {
+    return fs.readFileSync(name, 'utf-8');
+  }
+
+  static readDir(directory: string): Array<string> {
+    return fs.readdirSync(directory);
+  }
+
   static getCurrentDir: () => string = process.cwd;
 }

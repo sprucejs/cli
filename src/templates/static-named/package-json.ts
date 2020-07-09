@@ -22,7 +22,7 @@ export function generate(name: string): IGeneratedFile {
         "@types/node": "^14.0.18",
         "tsc-watch": "^4.2.9",
         "typescript": "^3.9.6",
-        "tslint": "^6.1.2",
+        "tslint": "^6.1.2"
       },
       "dependencies": {
         "@danielc7150/sprucejs": "^1.3.0",

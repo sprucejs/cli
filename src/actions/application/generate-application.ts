@@ -3,9 +3,9 @@ import path from 'path';
 
 import { Files } from '../../utilities/files';
 import { Logger } from '../../utilities/logger';
-import { generateStarterFiles } from './generate-starter-files';
-import { initialiseGit } from './initialise-git';
-import { installDependencies } from './install-dependencies';
+import { generateStarterFiles } from './lib/generate-starter-files';
+import { initialiseGit } from './lib/initialise-git';
+import { installDependencies } from './lib/install-dependencies';
 
 export async function generateApplication(command: Command): Promise<void> {
   const applicationName: string = command.args[0];

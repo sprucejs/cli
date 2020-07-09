@@ -1,6 +1,6 @@
-import { controller, module, router, service } from '../../templates/dynamic-named';
-import { FileType } from './interfaces/file-type.constant';
-import { IGeneratorDetails } from './interfaces/generator-details.interface';
+import { controller, module, router, service } from '../../../templates/dynamic-named';
+import { FileType } from '../interfaces/file-type.constant';
+import { IGeneratorDetails } from '../interfaces/generator-details.interface';
 
 export function getGeneratorFn(key: string): IGeneratorDetails {
   switch (key) {

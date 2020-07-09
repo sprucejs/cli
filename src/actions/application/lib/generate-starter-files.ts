@@ -1,11 +1,11 @@
 import { forEach } from 'lodash';
 import path from 'path';
 
-import { IGeneratedFile } from '../../templates/interfaces/generated-file.interface';
-import { IGeneratorModule } from '../../templates/interfaces/generator-module.interface';
-import * as starterFiles from '../../templates/static-named';
-import { Files } from '../../utilities/files';
-import { Logger } from '../../utilities/logger';
+import { IGeneratedFile } from '../../../templates/interfaces/generated-file.interface';
+import { IGeneratorModule } from '../../../templates/interfaces/generator-module.interface';
+import * as starterFiles from '../../../templates/static-named';
+import { Files } from '../../../utilities/files';
+import { Logger } from '../../../utilities/logger';
 
 export function generateStarterFiles(appName: string): void {
   forEach(starterFiles, (file: IGeneratorModule) => {

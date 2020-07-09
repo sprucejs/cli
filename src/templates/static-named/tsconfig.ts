@@ -21,7 +21,7 @@ export function generate(): IGeneratedFile {
         "noUnusedParameters": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
+        "emitDecoratorMetadata": true
       },
       "include": ["src/**/*"],
       "exclude": ["node_modules", "**/*.spec.ts", "**/*.stub.ts"]

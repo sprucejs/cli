@@ -8,11 +8,10 @@ export function generate(name: string): IGeneratedFile {
 
 import { IModule } from '@sprucejs/core';
 
-@injectable()
-export class ${kebabToPascal(name)}Module implements IModule {
-  public imports = [];
-  public providers = [];
-  public routes = [];
+export const ${kebabToPascal(name)}Module: IModule = {
+  imports: [],
+  providers: [],
+  routes: []
 }`
   };
 }

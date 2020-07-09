@@ -7,11 +7,10 @@ export function generate(): IGeneratedFile {
 
 import { IModule } from '@sprucejs/core';
 
-@injectable()
-export class AppModule implements IModule {
-  public imports = [];
-  public providers = [];
-  public routes = [];
+export const AppModule: IModule = {
+  imports: [],
+  providers: [],
+  routes: []
 }`
   };
 }
