@@ -7,7 +7,7 @@ export function generate(): IGeneratedFile {
 
 import { IModule } from '@sprucejs/core';
 
-export const AppModule: IModule = {
+export const appModule: IModule = {
   imports: [],
   providers: [],
   routes: []

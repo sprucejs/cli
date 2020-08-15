@@ -10,17 +10,20 @@ import { installDependencies } from './lib/install-dependencies';
 export async function generateApplication(command: Command): Promise<void> {
   const applicationName: string = command.args[0];
 
-  Logger.log('\nCreating SpruceJS project, sit tight...');
+  Logger.newLine();
+  Logger.log('🌲', 'Planting the seed for your spruce application...');
+  Logger.newLine();
 
   Files.createFolder(path.join(applicationName, 'src'));
 
-  Logger.log('\nGenerating starter files...');
   generateStarterFiles(applicationName);
 
-  Logger.log('\nInitialising Git repo...');
   await initialiseGit(applicationName);
-  Logger.success('Git successfully initilised!');
+  Logger.success('SUCCESS', 'Initialised git');
 
   await installDependencies(applicationName);
-  Logger.success('\nDependencies successfully installed!');
+
+  Logger.newLine();
+  Logger.success('SUCCESS', 'Dependencies successfully installed!');
+  Logger.newLine();
 }

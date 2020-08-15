@@ -6,16 +6,20 @@ export class Logger {
     console.log(chalk.blue(content));
   }
 
-  static error(content: any): void {
-    console.log(chalk.red(content));
+  static newLine(): void {
+    console.log(`\n`);
   }
 
-  static success(content: string): void {
-    console.log(chalk.green(content));
+  static error(keyword: string, content: any): void {
+    console.log(chalk.red(keyword, content));
   }
 
-  static log(content: string): void {
-    console.log(content);
+  static success(keyword: string, content: string): void {
+    console.log(chalk.green(keyword), content);
+  }
+
+  static log(keyword: string, content: string): void {
+    console.log(chalk.blue(keyword), content);
   }
 }
 

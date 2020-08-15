@@ -2,7 +2,7 @@ import path from 'path';
 
 import { Files } from '../../../utilities/files';
 
-export function addAndImportToModule(
+export function crawlModules(
   potentialModuleDir: string,
   callback: (
     moduleFileName: string,
@@ -32,6 +32,6 @@ export function addAndImportToModule(
       .slice(0, -1)
       .join('/');
 
-    addAndImportToModule(upperLevel, callback);
+    crawlModules(upperLevel, callback);
   }
 }

@@ -4,12 +4,12 @@ export function generate(): IGeneratedFile {
   return {
     fileName: 'src/main.ts',
     file: `import 'reflect-metadata';
-import { SpruceApp, SpruceFactory } from '@danielc7150/sprucejs';
+import { SpruceApp, SpruceFactory } from '@sprucejs/core';
 
-import { AppModule } from './app.module.ts';
+import { appModule } from './app.module';
 
 function bootstrap(): void {
-  const app: SpruceApp = SpruceFactory.create(AppModule);
+  const app: SpruceApp = SpruceFactory.create(appModule);
   app.setBaseUrl('/api/v1');
 
   app.listen(3000);

@@ -3,14 +3,14 @@ import { camelCase } from 'lodash';
 import { Files } from '../../../utilities/files';
 import { kebabToPascal } from '../../../utilities/kebab-to-pascal';
 import { Logger } from '../../../utilities/logger';
-import { addAndImportToModule } from './add-and-import-to-module';
+import { crawlModules } from './crawl-modules';
 
 export function addAndImportRouterToModule(
   moduleDir: string,
   fileLocation: string,
   fileName: string
 ): void {
-  addAndImportToModule(
+  crawlModules(
     moduleDir,
     (
       moduleFileName: string,
@@ -31,7 +31,7 @@ export function addAndImportRouterToModule(
       );
 
       Files.createFile(moduleFileLocation, moduleFileWithUpdatedRoutes);
-      Logger.success(`Updated ${moduleFileName}`);
+      Logger.success('UPDATED', moduleFileName);
     }
   );
 }

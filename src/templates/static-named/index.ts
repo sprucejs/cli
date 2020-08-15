@@ -1,6 +1,8 @@
-export * as gitignore from './gitignore';
-export * as packagejson from './package-json';
-export * as tsconfig from './tsconfig';
-export * as main from './main';
-export * as appmodule from './app-module';
-export * as tslint from './tslint';
+import * as appModule from './app-module';
+import * as gitignore from './gitignore';
+import * as main from './main';
+import * as packagejson from './package-json';
+import * as tsconfig from './tsconfig';
+import * as tslint from './tslint';
+
+export { gitignore, packagejson, tsconfig, main, appModule, tslint };

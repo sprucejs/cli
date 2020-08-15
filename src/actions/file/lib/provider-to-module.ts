@@ -2,7 +2,7 @@ import { Files } from '../../../utilities/files';
 import { kebabToPascal } from '../../../utilities/kebab-to-pascal';
 import { Logger } from '../../../utilities/logger';
 import { FileType } from '../interfaces/file-type.constant';
-import { addAndImportToModule } from './add-and-import-to-module';
+import { crawlModules } from './crawl-modules';
 
 export function addAndImportProviderToModule(
   moduleDir: string,
@@ -10,7 +10,7 @@ export function addAndImportProviderToModule(
   fileName: string,
   fileType: FileType
 ): void {
-  addAndImportToModule(
+  crawlModules(
     moduleDir,
     (
       moduleFileName: string,
@@ -32,7 +32,7 @@ export function addAndImportProviderToModule(
       );
 
       Files.createFile(moduleFileLocation, moduleFileWithAddedProviders);
-      Logger.success(`Updated ${moduleFileName}`);
+      Logger.success('UPDATED', moduleFileName);
     }
   );
 }

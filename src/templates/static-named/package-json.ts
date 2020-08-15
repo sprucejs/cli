@@ -25,7 +25,6 @@ export function generate(name: string): IGeneratedFile {
         "tslint": "^6.1.2"
       },
       "dependencies": {
-        "@danielc7150/sprucejs": "^1.3.0",
         "tsyringe": "^4.3.0"
       }
     }`

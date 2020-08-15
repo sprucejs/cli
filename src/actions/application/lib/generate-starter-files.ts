@@ -22,5 +22,5 @@ function generateFile(generator: IGeneratorModule, appName: string): void {
     );
 
   Files.createFile(fileLocation, data.file);
-  Logger.success(`Created ${data.fileName}`);
+  Logger.success('CREATED', `${appName}/${data.fileName}`);
 }
